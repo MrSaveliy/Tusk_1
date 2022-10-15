@@ -1,0 +1,21 @@
+import random
+
+
+def find_group(n, n1):
+    global count
+    a = []
+    for i in range(n1, n):
+        count = 0
+        while i > 0:
+            k = i % 10
+            count += k
+            i = i // 10
+        a.append(count)
+    for j in range(0, count):
+        x = a.count(j)
+        print("In a qroup", j + 1, "number of buyers =", x)
+
+
+n_customers = int(input())
+n_first_id = random.randrange(10000000)
+find_group(n_customers, n_first_id)
